@@ -7,7 +7,7 @@
  *
  * Filename: displayStats.php
  *
- * Parameter(s): NONE
+ * Parameter(s): Too Many To Name xD
  *
  * Description:
  * Display stats from the database.
