@@ -25,20 +25,6 @@
 <body>
 <?php
 
-//--- Ensure Steam Is Authenticated
-require 'steamauth.php';
-require 'config.php';
-
-if (!isset($_SESSION['steamid']))
-{
-
-//--- Make Player Login
-loginbutton();
-
-}
-else
-{
-
 $SteamID = $_SESSION['steamid'];
 
 //--- Establish Connection
@@ -84,6 +70,7 @@ if($wanted_result_finalised = $wanted_result_details->fetch_assoc())
       $XaFlaForo_Wanted_Name = $wanted_result_finalised["wantedName"];
       $XaFlaForo_Wanted_Bounty = $wanted_result_finalised["wantedBounty"];
       $XaFlaForo_Wanted_Crimes = $wanted_result_finalised["wantedCrimes"];
+      $XaFlaForo_Wanted_time = $wanted_result_finalised["insert_time"];
       $wanted_result_details->free();
 
 }
@@ -108,29 +95,37 @@ if($gangs_result_finalised = $gangs_result_details->fetch_assoc())
 */
 echo $XaFlaForo_House_PID;
 
+if ($XaFlaForo_House_hasGarage == 1) {
+  $XaFlaForo_House_hasGarage = "Yes";
+}
+else
+{
+  $XaFlaForo_House_hasGarage = "No";
+}
+
 //--- Convert INT to STRING for Cop Level
 switch ($XaFlaForo_Player_coplevel)
 {
   case 0:
-    $XaFlaForo_Player_coplevel = "Not Whitelisted";
+    $XaFlaForo_Player_coplevel = "PCSO";
     break;
   case 1:
-    $XaFlaForo_Player_coplevel = "Whitelisted";
+    $XaFlaForo_Player_coplevel = "PC";
     break;
   case 2:
-    $XaFlaForo_Player_coplevel = "Whitelisted";
+    $XaFlaForo_Player_coplevel = "SGT";
     break;
   case 3:
-    $XaFlaForo_Player_coplevel = "Whitelisted";
+    $XaFlaForo_Player_coplevel = "INSP";
     break;
   case 4:
-    $XaFlaForo_Player_coplevel = "Whitelisted";
+    $XaFlaForo_Player_coplevel = "C/INSP";
     break;
   case 5:
-    $XaFlaForo_Player_coplevel = "Whitelisted";
+    $XaFlaForo_Player_coplevel = "A/CC";
     break;
   case  6:
-    $XaFlaForo_Player_coplevel = "Whitelisted";
+    $XaFlaForo_Player_coplevel = "CC";
 }
 
 //--- Convert INT to STRING for Medic Level
@@ -140,26 +135,26 @@ switch ($XaFlaForo_Player_mediclevel)
     $XaFlaForo_Player_mediclevel = "Not Whitelisted";
     break;
   case 1:
-    $XaFlaForo_Player_mediclevel = "Whitelisted";
+    $XaFlaForo_Player_mediclevel = "Field Medic";
     break;
   case 2:
-    $XaFlaForo_Player_mediclevel = "Whitelisted";
+    $XaFlaForo_Player_mediclevel = "War Medic";
     break;
   case 3:
-    $XaFlaForo_Player_mediclevel = "Whitelisted";
+    $XaFlaForo_Player_mediclevel = "War Medic";
     break;
   case 4:
-    $XaFlaForo_Player_mediclevel = "Whitelisted";
+    $XaFlaForo_Player_mediclevel = "War Medic";
     break;
   case 5:
-    $XaFlaForo_Player_mediclevel = "Whitelisted";
+    $XaFlaForo_Player_mediclevel = "War Medic";
     break;
   case  6:
-    $XaFlaForo_Player_mediclevel = "Whitelisted";
+    $XaFlaForo_Player_mediclevel = "War Medic";
 }
 
 
-}
+
 //$establish_connection->close();
 ?>
 

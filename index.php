@@ -13,25 +13,19 @@
         <link rel="stylesheet" href="style5.css">
         <!-- Your custom styles (optional) -->
         <link href="css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
+
     </head>
     <body>
-
 		<?php
-
-			require 'steamauth.php';
-
-		?>
-		
-		<?php
-if(!isset($_SESSION['steamid'])) {
-
-
-    include ('steamauth/userInfo.php');
-    //Protected content
-
-    logoutbutton(); //Logout Button
-}     
-?>
+      require 'steamauth.php';
+      require 'config.php';
+      if(isset($_SESSION['steamid']))
+      {
+          include ('userInfo.php');
+      }
+      $get_your_fucking_hands_off_this_variable_cunt['dsgauigd'] = "XaFlaForo";
+    ?>
 
 
 
@@ -39,7 +33,7 @@ if(!isset($_SESSION['steamid'])) {
             <!-- Sidebar Holder -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3>CALL OF ARMA</h3>
+                    <h3><?php echo $communityinfo['name']; ?></h3>
                 </div>
 
                 <ul class="list-unstyled components">
@@ -52,7 +46,7 @@ if(!isset($_SESSION['steamid'])) {
                     </li>
 
                     <li>
-                        <a href="#">Your Stats</a>
+                        <a href="/Portal/yourstats.php">Your Stats</a>
                     </li>
                     <li>
                         <a href="#">Friends Stats</a>
@@ -88,21 +82,72 @@ if(!isset($_SESSION['steamid'])) {
                         </div>
 
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                          <?php    //echo "Welcome back " . $steamprofile['personaname'] . "</br>"; ?>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="?login">Sign In With Steam</a></li>
+                                <li><?php if(!isset($_SESSION['steamid'])) { loginbutton("rectangle"); } else { logoutbutton(); } ?></li>
                             </ul>
                         </div>
                     </div>
                 </nav>
 
-                <h2>Welcome to the Call Of ArmA Public Portal</h2>
+                <h2>Welcome to the <?php echo $communityinfo['name']; ?> Public Portal</h2>
                 <p>Portal is an advanced tool that allows you to see your in-game stats, friends stats, leaderboards, world-stats, check application status on factions and deperatments in your browser. Ensured you are signed in to steam for the site to function propely.</p>
-   
 
                 <div class="line"></div>
 
 
               <br><br><br><br><br><br><br><br><br><br>
+              <div class="content">
+</div>
+    <footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 myCols">
+                    <h5><?php echo $communityinfo['name']; ?></h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Downloads</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 myCols">
+                    <h5>About us</h5
+                    <ul>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 myCols">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help desk</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 myCols">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="social-networks">
+            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
+            <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+        </div>
+        <div class="footer-copyright">
+            <p> Portal created by <?php echo $get_your_fucking_hands_off_this_variable_cunt['dsgauigd'] ?> For <?php echo $communityinfo['name']; ?>  </p>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
 
 
