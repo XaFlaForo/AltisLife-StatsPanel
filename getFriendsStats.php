@@ -29,8 +29,17 @@
 $establish_connection = new mysqli($databaseconfig['ip'], $databaseconfig['user'], $databaseconfig['pass'], $databaseconfig['dbname']);
 $SteamID = $_GET["XaFlaForo_Friends_Details"];
 
+if (is_numeric($SteamID))
+{
+   $XaFlaForo_Type = 1; //--- Steam ID
+}
+else
+{
+   $XaFlaForo_Type = 2; //--- Name
+}
+
 //--- Get Results
-if ($_GET["XaFlaForo_Friends_Type"] = "Steam ID") {
+if ($XaFlaForo_Type == 1) {
   $players_result = "SELECT * FROM players WHERE pid = '$SteamID'";
   $wanted_result = "SELECT * FROM wanted WHERE wantedID = '$SteamID'";
   $house_result = "SELECT * FROM houses WHERE pid = '$SteamID'";
@@ -38,8 +47,7 @@ if ($_GET["XaFlaForo_Friends_Type"] = "Steam ID") {
   $gang_result = "SELECT * FROM gangs WHERE $SteamID IN (members) ";
 }
 
-
-if ($_GET["XaFlaForo_Friends_Type"] = "In-Game Name") {
+if ($XaFlaForo_Type == 2) {
 
   $players_result = "SELECT * FROM players WHERE name = '$SteamID'";
   $wanted_result = "SELECT * FROM wanted WHERE wantedName = '$SteamID'";
@@ -47,7 +55,7 @@ if ($_GET["XaFlaForo_Friends_Type"] = "In-Game Name") {
   $gang_result = "SELECT * FROM gangs WHERE $SteamID IN (members) ";
 }
 
-if ($_GET["XaFlaForo_Friends_Type"] = "In-Game Name")
+if ($XaFlaForo_Type == 2)
 {
   $name_to_steamID_details = $establish_connection->query($players_result);
   if( $steamid_result_finalised = $name_to_steamID_details -> fetch_assoc() )

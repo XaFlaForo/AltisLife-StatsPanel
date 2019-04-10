@@ -52,10 +52,10 @@
                             </ul>
                         </li>
 
-                        <li class="active">
+                        <li>
                             <a href="/Portal/yourstats.php">Your Stats</a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="#">Friends Stats</a>
                         </li>
 
@@ -108,18 +108,8 @@
                         <input type="text" class="form-control" name="XaFlaForo_Friends_Details" placeholder="Type here">
                       </div>
 
-                      <div class="form-group">
-                        <label for="exampleFormControlSelect1">Type</label>
-                        <select class="form-control" name="XaFlaForo_Friends_Type">
-                          <option>Select an option</option>
-                          <option>Steam ID</option>
-                          <option>In-Game Name</option>
-                        </select>
-
-                        <br>
                         <input type="submit">
 
-                      </div>
                     </form>
 
                     <br><br><br><br><br><br><br><br><br><br>
