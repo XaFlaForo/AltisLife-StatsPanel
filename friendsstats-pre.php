@@ -97,117 +97,34 @@
                         </div>
                     </nav>
 
-                    <h2>Welcome to the <?php echo $communityinfo['name']; ?> Public Portal - Your Stats</h2>
+                    <h2>Welcome to the <?php echo $communityinfo['name']; ?> Public Portal - Friends Stats</h2>
                     <p>Portal is an advanced tool that allows you to see your in-game stats, friends stats, leaderboards, world-stats, check application status on factions and deperatments in your browser. Ensured you are signed in to steam for the site to function propely.</p>
 
-                    <div class="line"></div>
 
-                    <h3>General Information</h3>
-                    <div class="line"></div>
+                    <form action="welcome.php" method="post">
 
-                      <table class="table">
-                        <thead>
-                            <tr>
-                              <th scope="col">UID</th>
-                              <th scope="col">Name</th>
-                              <th scope="col">Cash</th>
-                              <th scope="col">Bank Account</th>
-                              <th scope="col">Cop Rank</th>
-                              <th scope="col">Medic Rank</th>
-                              <th scope="col">Join Date</th>
-                              <th scope="col">Last Seen</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th scope="row"><?php echo $players_result_finalised["uid"]; ?></th>
-                              <th scope="row"><?php echo $players_result_finalised["name"]; ?></th>
-                              <th scope="row"><?php echo $players_result_finalised["cash"]; ?></th>
-                              <th scope="row"><?php echo $players_result_finalised["bankacc"]; ?></th>
-                              <th scope="row"><?php echo $XaFlaForo_Player_coplevel ?></th>
-                              <th scope="row"><?php echo $XaFlaForo_Player_mediclevel ?></th>
-                              <th scope="row"><?php echo $players_result_finalised["insert_time"]; ?></th>
-                              <th scope="row"><?php echo $players_result_finalised["last_seen"]; ?></th>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Steam ID OR In-Game Name</label>
+                        <input type="text" class="form-control" name="XaFlaForo_Friends_Details" placeholder="Type here">
+                      </div>
 
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect1">Type</label>
+                        <select class="form-control" name="XaFlaForo_Friends_Type">
+                          <option>Select an option</option>
+                          <option>Steam ID</option>
+                          <option>In-Game Name</option>
+                        </select>
 
+                        <br>
+                        <input type="submit">
 
-                            </tr>
-                          </tbody>
-                        </table>
-
-
-
-                    <div class="line"></div>
-
-                    <h3>Criminal Record</h3>
-                    <div class="line"></div>
-
-                    <table class="table">
-                      <thead>
-                          <tr>
-                            <th scope="col">Wanted ID</th>
-                            <th scope="col">Name In Database</th>
-                            <th scope="col">Current Bounty</th>
-                            <th scope="col">Wanted</th>
-                            <th scope="col">Time Of Last Crime Commited</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row"><?php echo $wanted_result_finalised["wantedID"]; ?></th>
-                            <th scope="row"><?php echo $wanted_result_finalised["wantedName"]; ?></th>
-                            <th scope="row"><?php echo $wanted_result_finalised["wantedBounty"]; ?></th>
-                            <th scope="row"><?php echo $players_result_finalised["bankacc"]; ?></th>
-                            <th scope="row"><?php echo $wanted_result_finalised["insert_time"]; ?></th>
-
-
-
-                          </tr>
-                        </tbody>
-                      </table>
-
-
-                    <div class="line"></div>
-
-                    <h3>Housing Portfolio</h3>
-
-                    <div class="line"></div>
-
-                    <table class="table">
-                      <thead>
-                          <tr>
-                            <th scope="col">Lease Number</th>
-                            <th scope="col">Coordinates </th>
-                            <th scope="col">Has Garage</th>
-                            <th scope="col">Time Purchased</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row"><?php echo $house_result_finalised["id"]; ?></th>
-                            <th scope="row"><?php echo $house_result_finalised["pos"]; ?></th>
-                            <th scope="row"><?php echo $XaFlaForo_House_hasGarage ?></th>
-                            <th scope="row"><?php echo $XaFlaForo_House_insert_time ?></th>
-
-
-
-                          </tr>
-                        </tbody>
-                      </table>
-                      <div class="line"></div>
-
-
-
-
-
-
-
-
-
-
+                      </div>
+                    </form>
 
                     <br><br><br><br><br><br><br><br><br><br>
                     <br><br><br><br><br>
+
 
                   <div class="content">
     </div>

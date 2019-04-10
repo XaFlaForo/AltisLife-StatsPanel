@@ -13,8 +13,13 @@
         <link rel="stylesheet" href="style5.css">
         <!-- Your custom styles (optional) -->
         <link href="css/style.css" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
-
+        <link rel="stylesheet" href="assets/css/Footer-with-button-logo.css">
+        <!-- jQuery CDN -->
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <!-- Bootstrap Js CDN -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
 		<?php
@@ -82,7 +87,6 @@
                         </div>
 
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                          <?php    //echo "Welcome back " . $steamprofile['personaname'] . "</br>"; ?>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><?php if(!isset($_SESSION['steamid'])) { loginbutton("rectangle"); } else { logoutbutton(); } ?></li>
                             </ul>
@@ -145,26 +149,5 @@
             <p> Portal created by <?php echo $get_your_fucking_hands_off_this_variable_cunt['dsgauigd'] ?> For <?php echo $communityinfo['name']; ?>  </p>
         </div>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
-
-
-
-
-        <!-- jQuery CDN -->
-         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-         <!-- Bootstrap Js CDN -->
-         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-         <script type="text/javascript">
-             $(document).ready(function () {
-                 $('#sidebarCollapse').on('click', function () {
-                     $('#sidebar').toggleClass('active');
-                     $(this).toggleClass('active');
-                 });
-             });
-         </script>
     </body>
 </html>
