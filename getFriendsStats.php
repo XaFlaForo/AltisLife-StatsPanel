@@ -25,17 +25,38 @@
 <body>
 <?php
 
-$SteamID = $_SESSION['steamid'];
-
 //--- Establish Connection
 $establish_connection = new mysqli($databaseconfig['ip'], $databaseconfig['user'], $databaseconfig['pass'], $databaseconfig['dbname']);
+$SteamID = $_GET["XaFlaForo_Friends_Details"];
 
 //--- Get Results
-$players_result = "SELECT * FROM players WHERE pid = '$SteamID'";
-$wanted_result = "SELECT * FROM wanted WHERE wantedID = '$SteamID'";
-$house_result = "SELECT * FROM houses WHERE pid = '$SteamID'";
-$vehicle_result = "SELECT * FROM vehicles WHERE pid = '$SteamID'";
-$gang_result = "SELECT * FROM gangs WHERE $SteamID IN (members) ";
+if ($_GET["XaFlaForo_Friends_Type"] = "Steam ID") {
+  $players_result = "SELECT * FROM players WHERE pid = '$SteamID'";
+  $wanted_result = "SELECT * FROM wanted WHERE wantedID = '$SteamID'";
+  $house_result = "SELECT * FROM houses WHERE pid = '$SteamID'";
+  $vehicle_result = "SELECT * FROM vehicles WHERE pid = '$SteamID'";
+  $gang_result = "SELECT * FROM gangs WHERE $SteamID IN (members) ";
+}
+
+
+if ($_GET["XaFlaForo_Friends_Type"] = "In-Game Name") {
+
+  $players_result = "SELECT * FROM players WHERE name = '$SteamID'";
+  $wanted_result = "SELECT * FROM wanted WHERE wantedName = '$SteamID'";
+  $name_to_steamID = "SELECT pid FROM players WHERE name = '$SteamID'";
+  $gang_result = "SELECT * FROM gangs WHERE $SteamID IN (members) ";
+}
+
+if ($_GET["XaFlaForo_Friends_Type"] = "In-Game Name")
+{
+  $name_to_steamID_details = $establish_connection->query($players_result);
+  if( $steamid_result_finalised = $name_to_steamID_details -> fetch_assoc() )
+  {
+    $name_to_steamID_details_complete = $steamid_result_finalised["pid"];
+    $house_result = "SELECT * FROM houses WHERE pid = '$name_to_steamID_details_complete'";
+    $vehicle_result = "SELECT * FROM vehicles WHERE pid = '$name_to_steamID_details_complete'";
+  }
+}
 
 //--- Define Results
 $players_result_details = $establish_connection->query($players_result );
@@ -74,17 +95,19 @@ if($wanted_result_finalised = $wanted_result_details->fetch_assoc())
       $wanted_result_details->free();
 
 }
+
 if($house_result_finalised = $house_result_details->fetch_assoc())
 {
 
       $XaFlaForo_House_ID = $house_result_finalised["id"];
       $XaFlaForo_House_PID = $house_result_finalised["pid"];
-      $XaFlaForo_House_POS = $house_result_finalised["pos"];
+      $XaFlaForo_House_POS = "Classified Information";
       $XaFlaForo_House_Owned = $house_result_finalised["owned"];
       $XaFlaForo_House_hasGarage = $house_result_finalised["garage"];
       $XaFlaForo_House_insert_time = $house_result_finalised["insert_time"];
       $house_result_details->free();
 }
+
 /*
 if($gangs_result_finalised = $gangs_result_details->fetch_assoc())
 {
