@@ -57,7 +57,7 @@
                             <a href="yourstats.php">Your Stats</a>
                         </li>
                         <li>
-                            <a href="#">Friends Stats</a>
+                            <a href="friendsstats-pre.php">Friends Stats</a>
                         </li>
                     <ul class="list-unstyled CTAs">
                         <li><a href="https://forum.localhost.com" class="article">Back to forums</a></li>
