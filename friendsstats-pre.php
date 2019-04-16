@@ -47,34 +47,21 @@
                         <p>PUBLIC PORTAL</p>
 
                         <li>
-                            <a href="/Portal">Home</a>
+                            <a href="/">Home</a>
                             <ul class="collapse list-unstyled" id="homeSubmenu">
                             </ul>
                         </li>
 
                         <li>
-                            <a href="/Portal/yourstats.php">Your Stats</a>
+                            <a href="yourstats.php">Your Stats</a>
                         </li>
                         <li class="active">
-                            <a href="#">Friends Stats</a>
+                            <a href="friendsstats-pre.php">Friends Stats</a>
                         </li>
-
-                        <li>
-                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Police</a>
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li><a href="#">Handbook</a></li>
-                                <li><a href="#">Roster</a></li>
-                                <li><a href="#">Page 3</a></li>
-                            </ul>
-                        </li>
-
-                    </ul>
-
                     <ul class="list-unstyled CTAs">
-                        <li><a href="https://callofarma.com" class="article">Back to forums</a></li>
+                        <li><a href="https://forum.localhost.com" class="article">Back to forums</a></li>
                     </ul>
                 </nav>
-
                 <!-- Page Content Holder -->
                 <div id="content">
 

@@ -99,6 +99,7 @@ if($wanted_result_finalised = $wanted_result_details->fetch_assoc())
       $XaFlaForo_Wanted_Name = $wanted_result_finalised["wantedName"];
       $XaFlaForo_Wanted_Bounty = $wanted_result_finalised["wantedBounty"];
       $XaFlaForo_Wanted_Crimes = $wanted_result_finalised["wantedCrimes"];
+      $XaFlaForo_Wanted_Active = $wanted_result_finalised["active"];
       $XaFlaForo_Wanted_time = $wanted_result_finalised["insert_time"];
       $wanted_result_details->free();
 

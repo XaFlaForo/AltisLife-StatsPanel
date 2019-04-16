@@ -70,6 +70,7 @@ if($wanted_result_finalised = $wanted_result_details->fetch_assoc())
       $XaFlaForo_Wanted_Name = $wanted_result_finalised["wantedName"];
       $XaFlaForo_Wanted_Bounty = $wanted_result_finalised["wantedBounty"];
       $XaFlaForo_Wanted_Crimes = $wanted_result_finalised["wantedCrimes"];
+	  $XaFlaForo_Wanted_Active = $wanted_result_finalised["active"];
       $XaFlaForo_Wanted_time = $wanted_result_finalised["insert_time"];
       $wanted_result_details->free();
 
@@ -93,7 +94,7 @@ if($gangs_result_finalised = $gangs_result_details->fetch_assoc())
       $XaFlaForo_House_POS->free();
 }
 */
-
+$XaFlaForo_House_hasGarage = $house_result_finalised["garage"];
 if ($XaFlaForo_House_hasGarage == 1) {
   $XaFlaForo_House_hasGarage = "Yes";
 }
@@ -103,31 +104,33 @@ else
 }
 
 //--- Convert INT to STRING for Cop Level
+$XaFlaForo_Player_coplevel = $players_result_finalised["coplevel"];
 switch ($XaFlaForo_Player_coplevel)
 {
   case 0:
-    $XaFlaForo_Player_coplevel = "PCSO";
+    $XaFlaForo_Player_coplevel = "Not Whitelisted";
     break;
   case 1:
-    $XaFlaForo_Player_coplevel = "PC";
+    $XaFlaForo_Player_coplevel = "PCSO";
     break;
   case 2:
-    $XaFlaForo_Player_coplevel = "SGT";
+    $XaFlaForo_Player_coplevel = "PC";
     break;
   case 3:
-    $XaFlaForo_Player_coplevel = "INSP";
+    $XaFlaForo_Player_coplevel = "SPC";
     break;
   case 4:
-    $XaFlaForo_Player_coplevel = "C/INSP";
+    $XaFlaForo_Player_coplevel = "SGT";
     break;
   case 5:
-    $XaFlaForo_Player_coplevel = "A/CC";
+    $XaFlaForo_Player_coplevel = "INSP";
     break;
-  case  6:
-    $XaFlaForo_Player_coplevel = "CC";
+  case 6:
+    $XaFlaForo_Player_coplevel = "C/INSP";
 }
 
 //--- Convert INT to STRING for Medic Level
+$XaFlaForo_Player_mediclevel = $players_result_finalised["mediclevel"];
 switch ($XaFlaForo_Player_mediclevel)
 {
   case 0:
