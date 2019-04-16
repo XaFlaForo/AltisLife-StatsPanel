@@ -45,13 +45,13 @@
                     <p>PUBLIC PORTAL</p>
 
                     <li class="active">
-                        <a href="/Portal">Home</a>
+                        <a href="/">Home</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                         </ul>
                     </li>
 
                     <li>
-                        <a href="/Portal/yourstats.php">Your Stats</a>
+                        <a href="yourstats.php">Your Stats</a>
                     </li>
                     <li>
                         <a href="friendsstats-pre.php">Friends Stats</a>
@@ -69,7 +69,7 @@
                 </ul>
 
                 <ul class="list-unstyled CTAs">
-                    <li><a href="https://callofarma.com" class="article">Back to forums</a></li>
+                    <li><a href="https://forum.localhost.com" class="article">Back to forums</a></li>
                 </ul>
             </nav>
 

@@ -48,13 +48,13 @@
                         <p>PUBLIC PORTAL</p>
 
                         <li>
-                            <a href="/Portal">Home</a>
+                            <a href="/">Home</a>
                             <ul class="collapse list-unstyled" id="homeSubmenu">
                             </ul>
                         </li>
 
                         <li class="active">
-                            <a href="/Portal/yourstats.php">Your Stats</a>
+                            <a href="yourstats.php">Your Stats</a>
                         </li>
                         <li>
                             <a href="#">Friends Stats</a>
@@ -72,7 +72,7 @@
                     </ul>
 
                     <ul class="list-unstyled CTAs">
-                        <li><a href="https://callofarma.com" class="article">Back to forums</a></li>
+                        <li><a href="https://forum.localhost.com" class="article">Back to forums</a></li>
                     </ul>
                 </nav>
 
@@ -127,9 +127,6 @@
                               <th scope="row"><?php echo $XaFlaForo_Player_mediclevel ?></th>
                               <th scope="row"><?php echo $players_result_finalised["insert_time"]; ?></th>
                               <th scope="row"><?php echo $players_result_finalised["last_seen"]; ?></th>
-
-
-
                             </tr>
                           </tbody>
                         </table>
@@ -147,7 +144,7 @@
                             <th scope="col">Wanted ID</th>
                             <th scope="col">Name In Database</th>
                             <th scope="col">Current Bounty</th>
-                            <th scope="col">Wanted</th>
+                            <th scope="col">Warrants</th>
                             <th scope="col">Time Of Last Crime Commited</th>
                           </tr>
                         </thead>
@@ -156,7 +153,7 @@
                             <th scope="row"><?php echo $wanted_result_finalised["wantedID"]; ?></th>
                             <th scope="row"><?php echo $wanted_result_finalised["wantedName"]; ?></th>
                             <th scope="row"><?php echo $wanted_result_finalised["wantedBounty"]; ?></th>
-                            <th scope="row"><?php echo $players_result_finalised["bankacc"]; ?></th>
+                            <th scope="row"><?php echo $wanted_result_finalised["active"]; ?></th>
                             <th scope="row"><?php echo $wanted_result_finalised["insert_time"]; ?></th>
 
 
@@ -185,8 +182,8 @@
                           <tr>
                             <th scope="row"><?php echo $house_result_finalised["id"]; ?></th>
                             <th scope="row"><?php echo "Classified Information" ?></th>
-                            <th scope="row"><?php echo $XaFlaForo_House_hasGarage ?></th>
-                            <th scope="row"><?php echo $XaFlaForo_House_insert_time ?></th>
+                            <th scope="row"><?php echo $house_result_finalised["garage"]; ?></th>
+                            <th scope="row"><?php echo $house_result_finalised["insert_time"]; ?></th>
 
 
 
