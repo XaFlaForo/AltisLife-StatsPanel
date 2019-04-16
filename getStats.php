@@ -127,24 +127,6 @@ switch ($XaFlaForo_Player_coplevel)
     break;
   case 6:
     $XaFlaForo_Player_coplevel = "C/INSP";
-	break;
-  case 7:
-    $XaFlaForo_Player_coplevel = "SUPT";
-	break;
-  case 8:
-    $XaFlaForo_Player_coplevel = "C/SUPT";
-	break;
-  case 9:
-    $XaFlaForo_Player_coplevel = "DA/COMM";
-	break;
-  case 10:
-    $XaFlaForo_Player_coplevel = "A/COMM";
-	break;
-  case 11:
-    $XaFlaForo_Player_coplevel = "D/COMM";
-	break;
-  case 12:
-    $XaFlaForo_Player_coplevel = "COMM";
 }
 
 //--- Convert INT to STRING for Medic Level
