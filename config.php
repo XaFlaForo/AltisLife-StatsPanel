@@ -23,9 +23,9 @@
 
 //--- Steam Login Config
 $steamauth['apikey'] = "77A30D5AD95C6D35AC745CC26EAC1A3F"; // Your Steam WebAPI-Key found at https://steamcommunity.com/dev/apikey
-$steamauth['domainname'] = "http://localhost/";
-$steamauth['loginpage'] = "http://localhost/";
-$steamauth['logoutpage'] = "http://localhost/";
+$steamauth['domainname'] = "http://localhost/Portal";
+$steamauth['loginpage'] = "http://localhost/Portal";
+$steamauth['logoutpage'] = "http://localhost/Portal";
 
 //--- Database Config
 $databaseconfig['ip'] = "localhost";
